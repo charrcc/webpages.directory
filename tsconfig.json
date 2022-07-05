@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ES2020",
+        "lib": ["ES2020"],
+        "types": ["@types/node"],
+        "esModuleInterop": true,
+        "moduleResolution": "Node"
+    },
+    "ts-node": {"esm": true},
+    "include": [
+        "./tests/*.ts"
+, "tests/webpages/webpages.ts"    ]
+}

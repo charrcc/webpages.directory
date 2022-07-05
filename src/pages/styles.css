@@ -1,0 +1,191 @@
+/* for flex, margins, fonts and others */
+html, body {
+    margin: unset;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    cursor: default;
+}
+* { font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+body a { text-decoration: none; }
+body a:hover { text-decoration: underline; }
+body a:active { text-decoration: none; }
+
+body aside, body > header, body > footer {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+/* includes the "webpages/" text and the github link */
+body > header {
+    color: rgb(45, 45, 45);
+    padding: 25px;
+    background-color: whitesmoke;
+    flex: 0 1 auto;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+/* for the text "webpages/", it also serves as a link to the homepage */
+body > header > #directory {
+    font-size: xx-large;
+    color: rgb(45, 45, 45);
+    text-decoration: none;
+    font-weight: bold;
+}
+body > header > #directory:hover { text-decoration: underline; }
+/* without this, mobile users will still see the underline after they click the url */
+body > header > #directory:active { text-decoration: none; }
+/* github image that goes to the repo when clicked */
+body > header > #github {
+    float: right;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+    border-radius: 100%;
+    transition-duration: 0.25s;
+}
+body > header > #github:hover { background-color: rgba(0, 0, 0, 0.1) }
+body > header > #github:active { background-color: rgba(0, 0, 0, 0) }
+
+/* everything that is not in header or #footer goes in this div */
+body > main {
+    background-color: white;
+    flex: 1 1 auto;
+}
+body[webpage] > main { text-align: center; }
+
+/* the title that also serves as a link to the webpage */
+body[webpage] > main > section > .title {
+    font-size: 50px;
+    color: rgb(45, 45, 45);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+}
+body[webpage] > main > section > .title:hover { text-decoration: underline; }
+/* without this, mobile users will still see the underline after they click the url */
+body[webpage] > main > section > .title:active { text-decoration: none; }
+/* description text for the webpage */
+body[webpage] > main > article {
+    margin-left: 100px;
+    margin-right: 100px;
+    cursor: text;
+}
+/* for buttons e.g like, share, report */
+body > main .button {
+    border: none;
+    background-color: black;
+    border-radius: 10px;
+    width: 125px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: large;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 2.5px 2.5px gainsboro;
+}
+body > main .button:hover {
+    transform: translateY(-2.5px) translateX(-2.5px);
+    box-shadow: 5px 5px gainsboro;
+}
+body > main .button:active {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 2.5px 2.5px gainsboro;
+}
+ 
+/* assign custom colors for each button */
+body > main .like {
+    background-image: linear-gradient(to bottom right, rgb(238, 136, 170), rgb(238, 153, 136));
+    box-shadow: 2.5px 2.5px rgb(240, 220, 157);
+}
+body > main .like:hover { box-shadow: 5px 5px rgb(240, 220, 157); }
+body > main .like:active { box-shadow: 2.5px 2.5px rgb(240, 220, 157); }
+body > main .share {
+    background-image: linear-gradient(to bottom right, rgb(110, 123, 233), rgb(122, 153, 245));
+    box-shadow: 2.5px 2.5px rgb(174, 221, 255);
+}
+body > main .share:hover { box-shadow: 5px 5px rgb(174, 221, 255); }
+body > main .share:active { box-shadow: 2.5px 2.5px rgb(174, 221, 255); }
+
+body > main .report {
+    background-image: linear-gradient(to bottom right, rgb(240, 117, 117), rgb(216, 90, 90));
+    box-shadow: 2.5px 2.5px rgb(203, 218, 229);
+}
+body > main .report:hover { box-shadow: 5px 5px rgb(203, 218, 229); }
+body > main .report:active { box-shadow: 2.5px 2.5px rgb(203, 218, 229); }
+/* for webpages shown on the list */
+body[webpages] > main { margin-top: 10px; }
+body[webpages] > main > section {
+    padding-left: 5%;
+    padding-right: 5%;
+    transition-duration: 0.25s;
+}
+body[webpages] > main > section:hover { background-color: whitesmoke; }
+/* the webpage url shown on the homepage */
+body[webpages] > main > section > .title {
+    font-size: x-large;
+    color: rgb(45, 45, 45);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+
+body[webpages] > main > section > .title:hover { text-decoration: underline; }
+/* without this, mobile users will still see the underline after they click the url */
+body[webpages] > main > section > .title:active { text-decoration: none; }
+/* custom button behavior for the homepage */
+body[webpages] > main > section > aside > .button {
+    opacity: 0;
+    position: relative;
+    vertical-align: middle;
+    transform: translateY(-125%);
+}
+body[webpages] > main > section > aside > .button { float: right; }
+body[webpages] > main > section > aside > .button:hover { transform: translateY(calc(-2.5px + -125%)) translateX(-2.5px); }
+body[webpages] > main > section > aside > .button:active { transform: translateY(-125%) translateX(0px); }
+body[webpages] > main > section:hover > aside > .button { opacity: 1; }
+
+/* footer */
+body > footer > p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 25px;
+    background-color: whitesmoke;
+    color: rgb(45, 45, 45);
+    font-weight: bold;
+}
+body > footer > p > a {
+    font-weight: normal;
+    color: rgb(45, 45, 45);
+    text-decoration: none;
+}
+body > footer > p > a:hover { text-decoration: underline; }
+/* without this, mobile users will still see the underline after they click the url */
+body > footer > p > a:active { text-decoration: none; }
+
+body[webpage] > main > article {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 35px;
+}
+body[webpage] > main > article > ul {
+    width: fit-content;
+    text-align: left;
+    transform: translateX(-15px);
+}

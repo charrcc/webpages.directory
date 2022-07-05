@@ -1,0 +1,8 @@
+User-agent: googlebot
+Disallow: /tokens/
+Disallow: /scripts/
+Disallow: /assets/
+Disallow: /_worker.js
+Disallow: /404.html
+Disallow: /styles.css
+Disallow: /robots.txt
