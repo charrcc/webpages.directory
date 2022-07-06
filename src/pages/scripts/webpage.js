@@ -12,7 +12,6 @@ function like(event, hostname) {
     (new Promise(function(resolve, reject) {
         fetch(`/api/like?hostname=${hostname}`)
             .then(response => {
-                console.log(response)
                 if (response.status === 200) {
                     response.text()
                         .then(function(text) {
