@@ -10,7 +10,7 @@ function share(event, hostname) {
 }
 function like(event, hostname) {
     (new Promise(function(resolve, reject) {
-        fetch(`${location.protocol}//api.${location.host}/like?hostname=${hostname}`)
+        fetch(`/api/like?hostname=${hostname}`)
             .then(response => {
                 console.log(response)
                 if (response.status === 200) {
@@ -25,7 +25,7 @@ function like(event, hostname) {
         .then(function(likes) { event.target.innerText = `like - ${likes}` })
 }
 function webpages(page=1) {
-    fetch(`${location.protocol}//api.${location.host}/webpages?page=${page}`)
+    fetch(`/api/webpages?page=${page}`)
         .then(response => {
             console.log(response)
             return response.json()
@@ -81,7 +81,7 @@ function webpage() {
         _webpage.href = `${location.protocol}//${hostname}`
         document.title = hostname
 
-        fetch(`${location.protocol}//api.${location.host}/webpage?hostname=${hostname}`)
+        fetch(`/api/webpage?hostname=${hostname}`)
             .then(response => {
                 if (response.status === 200) return response.json()
                 else return ""
