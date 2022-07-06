@@ -393,7 +393,7 @@ export default {
         }
 
         return response
-    },
+    }
     // async scheduled(event, env, ctx) {
     //     ctx.waitUntil((function() {
     //         const hostnames = {}
