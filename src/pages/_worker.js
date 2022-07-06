@@ -684,7 +684,7 @@ export default {
         //     break
         // }
 
-        return env.ASSETS.fetch(url)
+        return(env.ASSETS.fetch(url))
     }
     // async scheduled(event, env, ctx) {
     //     ctx.waitUntil((function() {
